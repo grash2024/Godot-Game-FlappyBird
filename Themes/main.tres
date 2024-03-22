@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://barpbdmb8bwx3"]
+
+[ext_resource type="FontFile" uid="uid://brssi4ip4qebg" path="res://font/MightySouly-lxggD.ttf" id="1_6lg40"]
+[ext_resource type="Texture2D" uid="uid://bw0dmeo4ehnrd" path="res://Tilesets/panel-000.png" id="2_hcjm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l8f6"]
+bg_color = Color(0.505882, 0.54902, 0.243137, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xlxll"]
+texture = ExtResource("2_hcjm7")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wog1b"]
+bg_color = Color(0.482353, 0.52549, 0.219608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohra7"]
+texture = ExtResource("2_hcjm7")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[resource]
+default_font = ExtResource("1_6lg40")
+default_font_size = 24
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_1l8f6")
+Button/styles/normal = SubResource("StyleBoxTexture_xlxll")
+Button/styles/pressed = SubResource("StyleBoxFlat_wog1b")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Panel/colors/DialoguePanel = Color(0.309385, 0.309385, 0.309385, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_ohra7")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)

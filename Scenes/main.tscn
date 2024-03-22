@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc5uptod0devg"]
+
+[ext_resource type="PackedScene" uid="uid://bc0p0ms3fxuxj" path="res://Scenes/forest_map.tscn" id="1_2ktdk"]
+[ext_resource type="PackedScene" uid="uid://bvimjxlgnmrhi" path="res://Character/Player/player.tscn" id="2_4vo87"]
+[ext_resource type="PackedScene" uid="uid://cjjo3y72w15ku" path="res://Character/Enemy/enemy.tscn" id="3_m4ww0"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ForestMap" parent="." instance=ExtResource("1_2ktdk")]
+layer_1/y_sort_origin = 1
+
+[node name="Player" parent="." instance=ExtResource("2_4vo87")]
+y_sort_enabled = true
+position = Vector2(258, 84)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("3_m4ww0")]
+position = Vector2(402, 239)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("3_m4ww0")]
+position = Vector2(790, -2)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("3_m4ww0")]
+position = Vector2(131, 230)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("3_m4ww0")]
+position = Vector2(676, 228)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("3_m4ww0")]
+position = Vector2(842, 430)

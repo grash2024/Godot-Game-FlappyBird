@@ -1,0 +1,181 @@
+[gd_scene load_steps=20 format=3 uid="uid://bvimjxlgnmrhi"]
+
+[ext_resource type="Script" path="res://Character/Player/player.gd" id="1_04fif"]
+[ext_resource type="Texture2D" uid="uid://b3r5k1linohxv" path="res://Tilesets/player.png" id="1_yndob"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0c3ie"]
+radius = 5.09902
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76gm8"]
+atlas = ExtResource("1_yndob")
+region = Rect2(0, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqlgn"]
+atlas = ExtResource("1_yndob")
+region = Rect2(17, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjuu6"]
+atlas = ExtResource("1_yndob")
+region = Rect2(34, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnvq7"]
+atlas = ExtResource("1_yndob")
+region = Rect2(51, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbt2x"]
+atlas = ExtResource("1_yndob")
+region = Rect2(0, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lxw7"]
+atlas = ExtResource("1_yndob")
+region = Rect2(17, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf8f1"]
+atlas = ExtResource("1_yndob")
+region = Rect2(34, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn0sw"]
+atlas = ExtResource("1_yndob")
+region = Rect2(51, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy8wj"]
+atlas = ExtResource("1_yndob")
+region = Rect2(0, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41cft"]
+atlas = ExtResource("1_yndob")
+region = Rect2(17, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahxdr"]
+atlas = ExtResource("1_yndob")
+region = Rect2(34, 40, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxd8o"]
+atlas = ExtResource("1_yndob")
+region = Rect2(51, 40, 17, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhvbg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76gm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqlgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjuu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnvq7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbt2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lxw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf8f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn0sw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy8wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41cft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahxdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxd8o")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_qidfw"]
+resource_name = "stomp"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.523599, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StompAttack/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yldlf"]
+_data = {
+"stomp": SubResource("Animation_qidfw")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6314"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(489, 196)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_04fif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_0c3ie")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -9)
+limit_left = -88
+limit_top = -73
+limit_right = 1069
+limit_bottom = 569
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nhvbg")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yldlf")
+}
+
+[node name="StompAttack" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompAttack"]
+shape = SubResource("CircleShape2D_r6314")
+disabled = true
+
+[connection signal="body_entered" from="StompAttack" to="." method="_on_stomp_attack_body_entered"]

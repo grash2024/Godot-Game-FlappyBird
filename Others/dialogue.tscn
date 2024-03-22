@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dafe5lidv013e"]
+
+[ext_resource type="Script" path="res://Others/dialogue.gd" id="1_m7ixl"]
+
+[node name="Dialogue" type="Panel"]
+offset_right = 639.0
+offset_bottom = 139.0
+script = ExtResource("1_m7ixl")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 10.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -62.0
+offset_right = 9.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "xxxxxxxxxx"
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)

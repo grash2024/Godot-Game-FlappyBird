@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b63kemapy7k7j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhr33"]
+bg_color = Color(0.894118, 0, 0, 0.207843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uaqc"]
+bg_color = Color(0.811765, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="PlayerHealthUi" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 207.0
+offset_bottom = 89.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.5
+anchor_right = 0.961
+anchor_bottom = 0.854
+offset_left = 14.376
+offset_top = -0.5
+offset_right = -14.927
+offset_bottom = -2.006
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_vhr33")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3uaqc")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.5
+anchor_right = 0.951
+anchor_bottom = 0.804
+offset_left = 13.513
+offset_top = -32.5
+offset_right = -22.857
+offset_bottom = -29.556
+grow_horizontal = 2
+grow_vertical = 0
+text = "Player Health:"
