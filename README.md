@@ -6,7 +6,7 @@ TO use Stomp attack(to kill enemy) use E key
 <br>
 Use Space bar key + movement key i.e(A,W,S,D) to move faster 
 <br>
-period(.) key is used to start conversation with NPC
+Period(.) key is used to start conversation with NPC
 <br>
 TO forward next msg box(conversation) with NPC use shit key  + slash(/) key
 <br>
