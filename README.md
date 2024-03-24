@@ -8,7 +8,7 @@ Use Space bar key + movement key i.e(A,W,S,D) to move faster
 <br>
 Period(.) key is used to start conversation with NPC
 <br>
-TO forward next msg box(conversation) with NPC use shit key  + slash(/) key
+TO forward next msg box(conversation) with NPC use shift key  + slash(/) key
 <br>
 After killing every enemy in cave use Z key to enter boss fight
 
